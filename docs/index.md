@@ -6,7 +6,7 @@ Welcome to Netsoc's documentation! Here you'll find information about all of
 our services and how to use them!
 
 It's a work in progress, so not everything will be documented in detail / at
-all!
+all! (There isn't much here right now :sob:)
 
 ## Contributing
 
