@@ -1,0 +1,7 @@
+site_name: Netsoc
+repo_url: https://github.com/netsoc/docs
+repo_name: netsoc/docs
+theme:
+  name: material
+plugins:
+  - git-revision-date
