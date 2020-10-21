@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# Home
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Welcome
 
-## Commands
+Welcome to Netsoc's documentation! Here you'll find information about all of
+our services and how to use them!
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+It's a work in progress, so not everything will be documented in detail / at
+all!
 
-## Project layout
+## Contributing
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Click the :material-pencil: at the top-right of every page to edit the page
+on GitHub.
+
+_Many of our services have their own documentation in a separate repo._ See
+[our GitHub page]({{ github_org }}) for a list of repos. Documentation is kept
+in a `docs/` subdirectory.
