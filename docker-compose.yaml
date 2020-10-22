@@ -8,5 +8,6 @@ services:
     volumes:
       - .:/docs
       - ../cli/docs:/docs/docs/cli
+      - ../webspaced/docs:/docs/docs/webspaced
     ports:
       - 8000:8000

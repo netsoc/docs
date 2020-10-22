@@ -5,9 +5,12 @@ theme:
   name: material
   logo: assets/nat-white.svg
   favicon: assets/nat.png
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
 markdown_extensions:
+  - attr_list
   - abbr
   - admonition
   - pymdownx.snippets
