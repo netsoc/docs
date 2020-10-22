@@ -1,0 +1,103 @@
+{
+  "nav": [
+    {
+      "netsoc": "netsoc.md"
+    },
+    {
+      "netsoc account": "netsoc_account.md"
+    },
+    {
+      "netsoc account delete": "netsoc_account_delete.md"
+    },
+    {
+      "netsoc account info": "netsoc_account_info.md"
+    },
+    {
+      "netsoc account issue": "netsoc_account_issue.md"
+    },
+    {
+      "netsoc account list": "netsoc_account_list.md"
+    },
+    {
+      "netsoc account login": "netsoc_account_login.md"
+    },
+    {
+      "netsoc account logout": "netsoc_account_logout.md"
+    },
+    {
+      "netsoc account set": "netsoc_account_set.md"
+    },
+    {
+      "netsoc completion": "netsoc_completion.md"
+    },
+    {
+      "netsoc docs": "netsoc_docs.md"
+    },
+    {
+      "netsoc version": "netsoc_version.md"
+    },
+    {
+      "netsoc webspace": "netsoc_webspace.md"
+    },
+    {
+      "netsoc webspace boot": "netsoc_webspace_boot.md"
+    },
+    {
+      "netsoc webspace config": "netsoc_webspace_config.md"
+    },
+    {
+      "netsoc webspace config set": "netsoc_webspace_config_set.md"
+    },
+    {
+      "netsoc webspace console": "netsoc_webspace_console.md"
+    },
+    {
+      "netsoc webspace delete": "netsoc_webspace_delete.md"
+    },
+    {
+      "netsoc webspace domains": "netsoc_webspace_domains.md"
+    },
+    {
+      "netsoc webspace domains add": "netsoc_webspace_domains_add.md"
+    },
+    {
+      "netsoc webspace domains remove": "netsoc_webspace_domains_remove.md"
+    },
+    {
+      "netsoc webspace exec": "netsoc_webspace_exec.md"
+    },
+    {
+      "netsoc webspace images": "netsoc_webspace_images.md"
+    },
+    {
+      "netsoc webspace init": "netsoc_webspace_init.md"
+    },
+    {
+      "netsoc webspace log": "netsoc_webspace_log.md"
+    },
+    {
+      "netsoc webspace login": "netsoc_webspace_login.md"
+    },
+    {
+      "netsoc webspace ports": "netsoc_webspace_ports.md"
+    },
+    {
+      "netsoc webspace ports add": "netsoc_webspace_ports_add.md"
+    },
+    {
+      "netsoc webspace ports remove": "netsoc_webspace_ports_remove.md"
+    },
+    {
+      "netsoc webspace reboot": "netsoc_webspace_reboot.md"
+    },
+    {
+      "netsoc webspace shutdown": "netsoc_webspace_shutdown.md"
+    },
+    {
+      "netsoc webspace status": "netsoc_webspace_status.md"
+    },
+    {
+      "netsoc webspace sync": "netsoc_webspace_sync.md"
+    }
+  ]
+}
