@@ -7,5 +7,6 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - .:/docs
+      - ../cli/docs:/docs/docs/cli
     ports:
       - 8000:8000
