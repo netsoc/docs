@@ -2,6 +2,10 @@
 
 Manage our services from the command line!
 
+!!! tip
+    You can skip installing the CLI on your own machine with SSH! See
+    [here](../shh/) for more info.
+
 ## Getting started
 
 To get started with the CLI, you'll need to download the
