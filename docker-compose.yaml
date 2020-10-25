@@ -9,5 +9,6 @@ services:
       - .:/docs
       - ../cli/docs:/docs/docs/cli
       - ../webspaced/docs:/docs/docs/webspaced
+      - ../shh/docs:/docs/docs/shh
     ports:
       - 8000:8000
