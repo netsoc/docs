@@ -22,6 +22,7 @@ markdown_extensions:
 plugins:
   - macros
   - awesome-pages
+  - search
   - git-revision-date-localized:
       type: timeago
 
