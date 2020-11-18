@@ -5,6 +5,7 @@
 Netsoc uses three subnets (provisionally):
 
 - `10.69.0.0/16` (Netsoc private LAN)
+- `10.42.0.0/24` (Netsoc private VPN)
 - `134.226.0.0/16` (TCD main allocation, Netsoc is permitted _only_ to use
   `134.226.83.3-254`)
 - `192.168.69.0/24` (Maths server room management network)
@@ -20,6 +21,8 @@ Netsoc uses three subnets (provisionally):
 - `10.16.1.1`: `napalm`
 - `10.16.1.2`: `spoon`
 - `10.16.1.3`: `cube`
+- `10.16.10.1`: `napalm-idrac`
+- `10.16.10.3`: `cube-idrac`
 
 !!! note
     LAN IP addresses are handed out over DHCP (IP addresses fixed in
@@ -31,7 +34,7 @@ Netsoc has a switch (named `nintendo`) which handles all our traffic in the
 maths department's server room. It is a Netgear GS748TS (48 port gigabit
 managed), donated by `dev`.
 
-&lt;picture to come&gt;
+![Maths server room rack](assets/maths.jpg)
 
 ### VLANs
 
@@ -46,13 +49,14 @@ network!), VLAN's are configured on `nintendo`.
 
 - VLAN 69 (Netsoc private LAN)
 
-    Untagged on all ports (except for management ports), tagged on management
-    ports. Also the PVID for all ports except management ports.
+    Untagged on all ports (except for management and TCD uplink 3, 4, 5 and 6),
+    tagged on management ports. Also the PVID for all ports except management
+    and TCD uplink ports.
 
 - VLAN 420 (TCD public network)
 
     Untagged and PVID on ports 3, 4, 5, and 6 (for uplink to maths' switches).
-    Not untagged or PVID for any ports to avoid accidentally connecting to the
-    public network!
+    Tagged only on all others to avoid accidentally connecting to the public
+    network!
 
 *[PVID]: While a VLAN being untagged on a port tells the switch that a packet on that VLAN should be stripped of VLAN headers when going out on that port, the PVID sets the VLAN that should be assigned to packets coming into the port.

@@ -33,7 +33,12 @@ Set up `dnsmasq`, the DNS and DHCP server
         the boot script over HTTP)
 
 3. Create the TFTP directory `/srv/tftp`
-4. Replace `/etc/hosts` with `10.69.0.1 shoe.netsoc.internal shoe`
+4. Replace `/etc/hosts` with:
+
+    ```
+    --8<-- "docs/infrastructure/boot/hosts"
+    ```
+
 5. Enable `dnsmasq` (`systemctl enable dnsmasq`)
 
 ### Network interfaces
@@ -131,6 +136,32 @@ NFS allows the booted systems to update their apkovl archives.
 3. Enable `nftables` (`systemctl enable nftables`)
 4. Write `net.ipv4.ip_forward=1` into `/etc/sysctl.d/forwarding.conf`
 
+### WireGuard
+
+1. Install `wireguard-tools` and `wireguard-dkms` (you'll also need the kernel
+   headers, e.g. `linux-headers` for regular Arch, `linux-raspberrypi-headers`
+   for ARMv7 Raspberry Pis)
+2. Generate private and public key (as root): `wg genkey | sudo tee /etc/wireguard/privkey | wg pubkey > /etc/wireguard/pubkey`
+3. Change private key permissions `chmod 600 /etc/wireguard/privkey`
+4. Create `/etc/wireguard/vpn.conf`:
+
+    ```hl_lines="2 7"
+    --8<-- "docs/infrastructure/boot/vpn.conf"
+    ```
+
+    Replace the private key with the contents of `/etc/wireguard/privkey`! For
+    each user, create a `[Peer]` section with their public key and a new IP.
+
+5. Create a client configuration file:
+
+    ```hl_lines="2 7"
+    --8<-- "docs/infrastructure/boot/vpn-client.conf"
+    ```
+
+    A private key for the client can be generated with `wg genkey` as before.
+
+5. Enable and start the WireGuard service: `systemctl enable --now wg-quick@vpn`
+
 ## Alpine Linux setup
 
 Make sure the server to be provisioned is set to UEFI mode and boot over PXE
@@ -158,14 +189,13 @@ Make sure the server to be provisioned is set to UEFI mode and boot over PXE
         iface lan inet dhcp
             pre-up [ -e /sys/class/net/eth0 ] && (ip addr flush dev eth0 && ip link set dev eth0 down) || true
             pre-up nameif $IFACE 52:54:00:12:34:57
-            hostname myserver
 
         auto wan
         iface wan inet static
             vlan-raw-device lan
             vlan-id 420
             address 134.226.83.xxx
-            netmask 255.255.0.0
+            netmask 255.255.255.0
             broadcast 134.226.83.255
             gateway 134.226.83.1
         ```
@@ -180,11 +210,11 @@ Make sure the server to be provisioned is set to UEFI mode and boot over PXE
 
 5. Replace the contents of `/etc/apk/repositories` with:
     ```
-    https://uk.alpinelinux.org/alpine/v3.12/main
-    https://uk.alpinelinux.org/alpine/v3.12/community
-    @edge https://uk.alpinelinux.org/alpine/edge/main
-    @edge https://uk.alpinelinux.org/alpine/edge/community
-    @testing https://uk.alpinelinux.org/alpine/edge/testing
+    http://uk.alpinelinux.org/alpine/v3.12/main
+    http://uk.alpinelinux.org/alpine/v3.12/community
+    @edge http://uk.alpinelinux.org/alpine/edge/main
+    @edge http://uk.alpinelinux.org/alpine/edge/community
+    @testing http://uk.alpinelinux.org/alpine/edge/testing
     ```
 
     Note the mirror name and Alpine branch (`v3.12` in this case). Run
