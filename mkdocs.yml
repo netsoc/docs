@@ -9,6 +9,8 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.tabs
+  font:
+    code: Source Code Pro
 markdown_extensions:
   - attr_list
   - abbr
