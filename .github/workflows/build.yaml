@@ -9,7 +9,7 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     env:
       CR_PAT_USER: devplayer0
@@ -32,4 +32,4 @@ jobs:
         run: docker build -t "${{ env.REPO }}:${{ github.sha }}" -t "${{ env.REPO }}:latest" .
 
       - name: Push
-        run: docker push "$REPO"
+        run: docker push --all-tags "$REPO"
