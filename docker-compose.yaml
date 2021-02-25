@@ -11,5 +11,6 @@ services:
       - ../webspaced/docs:/docs/docs/webspaced
       - ../shh/docs:/docs/docs/shh
       - ../infrastructure/docs:/docs/docs/infrastructure
+      - ../infrastructure/boot:/docs/docs/boot
     ports:
       - 8000:8000
