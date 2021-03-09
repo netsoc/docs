@@ -50,7 +50,7 @@ To get started with the CLI, you'll need to download the
     3. Move and rename the program into somewhere on your `$PATH` (so you can run it
        directly!), for example:
        ```bash
-       sudo mv Downloads/cli-darwin-10.16-amd64 /usr/local/bin/netsoc
+       sudo mv Downloads/cli-darwin-10.6-amd64 /usr/local/bin/netsoc
        ```
 
 === "Windows"
