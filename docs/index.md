@@ -2,8 +2,8 @@
 
 ## Welcome
 
-Welcome to Netsoc's documentation! Here you'll find information about all of
-our services and how to use them!
+Welcome to Netsoc's documentation! Here you'll find information about our
+services and how to use them!
 
 It's a work in progress, so not everything will be documented in detail / at
 all!
