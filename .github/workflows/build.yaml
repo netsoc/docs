@@ -28,8 +28,14 @@ jobs:
           username: ${{ env.CR_PAT_USER }}
           password: ${{ secrets.CI_PAT }}
 
+      - id: vars
+        name: Generate build vars
+        run: |
+          SHA="${{ github.sha }}"
+          echo "::set-output name=tag::"${SHA:0:8}-$(date +%s)Z""
+
       - name: Build
-        run: docker build -t "${{ env.REPO }}:${{ github.sha }}" -t "${{ env.REPO }}:latest" .
+        run: docker build -t "${{ env.REPO }}:${{ steps.vars.outputs.tag }}" -t "${{ env.REPO }}:latest" .
 
       - name: Push
         run: docker push --all-tags "$REPO"
