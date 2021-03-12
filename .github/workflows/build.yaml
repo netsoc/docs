@@ -21,19 +21,6 @@ jobs:
           # So that the build can see the history and note the update times
           fetch-depth: 0
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-        with:
-          driver-opts: image=moby/buildkit:master
-
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
-
       - name: Log into GitHub Container Registry
         uses: docker/login-action@v1
         with:
@@ -48,14 +35,7 @@ jobs:
           echo "::set-output name=tag::"${SHA:0:8}-$(date +%s)Z""
 
       - name: Build
-        uses: docker/build-push-action@v2
-        with:
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
-          load: true
-          tags: |
-            ${{ env.REPO }}:${{ steps.vars.outputs.tag }}
-            ${{ env.REPO }}:latest
+        run: docker build -t "${{ env.REPO }}:${{ steps.vars.outputs.tag }}" -t "${{ env.REPO }}:latest" .
 
       - name: Push
         run: docker push --all-tags "$REPO"
