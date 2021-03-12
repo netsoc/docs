@@ -34,6 +34,7 @@ jobs:
           SHA="${{ github.sha }}"
           echo "::set-output name=tag::"${SHA:0:8}-$(date +%s)Z""
 
+      # Use plain Docker here, buildx misses .git
       - name: Build
         run: docker build -t "${{ env.REPO }}:${{ steps.vars.outputs.tag }}" -t "${{ env.REPO }}:latest" .
 
