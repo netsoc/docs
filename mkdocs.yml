@@ -1,6 +1,8 @@
 site_name: Netsoc
+site_url: https://docs.netsoc.ie
 repo_url: https://github.com/netsoc/docs
 repo_name: netsoc/docs
+use_directory_urls: true
 theme:
   name: material
   logo: assets/nat-white.svg

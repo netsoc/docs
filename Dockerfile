@@ -1,4 +1,4 @@
-FROM python:3.8-alpine AS builder
+FROM python:3.9-alpine AS builder
 
 RUN apk --no-cache add build-base git
 RUN pip install pipenv

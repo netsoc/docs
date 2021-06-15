@@ -9,7 +9,7 @@ verify_ssl = true
 mkdocs-material = "*"
 mkdocs-git-revision-date-localized-plugin = "*"
 mkdocs-awesome-pages-plugin = "*"
-mkdocs-macros-plugin = "*"
+mkdocs-macros-plugin = {ref = "v0.5.12", git = "https://github.com/fralau/mkdocs_macros_plugin"}
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
