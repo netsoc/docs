@@ -29,28 +29,32 @@ To get started with the CLI, you'll need to download the
 
     1. Download `cli-linux-<arch>` (almost certainly `amd64`)
     2. Make the binary executable:
+
         ```bash
         chmod +x Downloads/cli-linux-amd64
         ```
 
     3. Move and rename the program into somewhere on your `$PATH` (so you can run it
        directly!), for example:
+
        ```bash
        sudo mv Downloads/cli-linux-amd64 /usr/local/bin/netsoc
        ```
 
 === "macOS"
 
-    1. Download `cli-darwin-10.6-amd64`
+    1. Download `cli-darwin-10.12-amd64` (switch `amd64` to `arm64` on Apple Silicon)
     2. Make the binary executable:
+
         ```bash
-        chmod +x Downloads/cli-darwin-10.6-amd64
+        chmod +x Downloads/cli-darwin-10.12-*
         ```
 
     3. Move and rename the program into somewhere on your `$PATH` (so you can run it
        directly!), for example:
+
        ```bash
-       sudo mv Downloads/cli-darwin-10.6-amd64 /usr/local/bin/netsoc
+       sudo mv Downloads/cli-darwin-10.12-* /usr/local/bin/netsoc
        ```
 
 === "Windows"
