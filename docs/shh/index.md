@@ -6,13 +6,13 @@ The CLI is pre-configured, so you won't even need to log in!
 
 ## Usage
 
-To connect to the gateway, simply SSH with your Netsoc username to `netsoc.ie`.
+To connect to the gateway, simply SSH with your Netsoc username to `shh.netsoc.ie`.
 
 === "Linux / macOS"
-    Run `ssh myusername@netsoc.ie`:
+    Run `ssh myusername@shh.netsoc.ie`:
 
     ```
-    $ ssh dev@netsoc.ie
+    $ ssh dev@shh.netsoc.ie
     Welcome to Netsoc SHH (not a typo :P).
     The latest version of the CLI is pre-installed (type netsoc).
 
@@ -50,8 +50,8 @@ the SSH gateway. Simply change your username in the SSH command to
 be dropped straight into a shell in your webspace.
 
 ```
-$ ssh dev-ws@netsoc.ie
-dev-ws@netsoc.ie's password:
+$ ssh dev-ws@shh.netsoc.ie
+dev-ws@shh.netsoc.ie's password:
 root@ws-u3:~#
 ```
 
