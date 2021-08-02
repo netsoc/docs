@@ -32,3 +32,4 @@ plugins:
 
 extra:
   github_org: https://github.com/netsoc
+  pgp_key: DB2E28B13D53C8DD62FE560B408F6E592A12DF74
