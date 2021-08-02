@@ -1,0 +1,5 @@
+nav:
+  - longhorn.md
+  - metallb.md
+  - cert-manager.md
+  - ...
