@@ -5,6 +5,11 @@ volumes in files on disk (in
 `/var/lib/longhorn` by default) and attaches them to nodes using iSCSI (frontends as block devices in `/dev/longhorn`).
 The UI is accessible at [longhorn.netsoc.tcd.ie](https://longhorn.netsoc.tcd.ie), where volumes can be managed.
 
+## Backups
+
+Longhorn has quite an effective [backup system](https://longhorn.io/docs/1.1.2/concepts/#3-backups-and-secondary-storage).
+Currently, the backup target is set to dev's home server via S3 (a MinIO server).
+
 ## Mounting a volume on a host
 
 1. Go to the "Volume" page in the Longhorn UI
