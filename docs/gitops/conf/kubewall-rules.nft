@@ -1,0 +1,48 @@
+#!/usr/bin/nft -f
+flush ruleset
+
+define lb_dns = 134.226.83.27
+define lb_http = 134.226.83.100
+define lb_ws_forward = 134.226.83.101
+define lb_shh = 134.226.83.102
+define lb_git = 134.226.83.103
+
+table inet filter {
+  chain wan-tcp {
+    ip daddr $lb_dns tcp dport domain accept
+    ip daddr $lb_http tcp dport { http, https, 8443 } accept
+    ip daddr $lb_ws_forward tcp dport 49152-65535 accept
+    ip daddr $lb_shh tcp dport ssh accept
+    ip daddr $lb_git tcp dport { ssh, http, https } accept
+  }
+  chain wan-udp {
+    ip daddr $lb_dns udp dport domain accept
+  }
+
+  chain wan {
+    ip protocol icmp icmp type {
+      destination-unreachable,
+      router-solicitation,
+      router-advertisement,
+      time-exceeded,
+      parameter-problem,
+      echo-request
+    } accept
+
+    ip protocol tcp tcp flags & (fin|syn|rst|ack) == syn ct state new jump wan-tcp
+    ip protocol udp ct state new jump wan-udp
+
+    drop
+  }
+
+  chain input {
+    type filter hook input priority 0; policy accept;
+
+    ct state established,related accept
+    ct state invalid drop
+
+    iifname wan jump wan
+  }
+}
+
+# vim:set ts=2 sw=2 et:

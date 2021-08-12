@@ -1,4 +1,5 @@
 nav:
+  - kubewall.md
   - longhorn.md
   - metallb.md
   - cert-manager.md

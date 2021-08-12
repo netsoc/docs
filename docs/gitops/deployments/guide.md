@@ -94,6 +94,12 @@ gitops
 └── README.md
 ```
 
+## `LoadBalancer` services
+
+When creating a `LoadBalancer` service, please consider the caveats
+[as described in the MetalLB deployment](../infrastructure/metallb/). You'll also need to update the rules for
+[Kubewall](../infrastructure/kubewall/).
+
 ## Secrets
 
 ### `secretGenerator` naming
