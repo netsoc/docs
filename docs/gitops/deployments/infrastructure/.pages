@@ -6,6 +6,7 @@ nav:
   - smarter-device-manager.md
   - traefik.md
   - whoami.md
+  - dns.md
   - k8s-dash.md
   - notifications.md
   - mail.md

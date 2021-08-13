@@ -9,7 +9,20 @@ The basic deployment of Traefik uses a `LoadBalancer` service running on 134.226
 [traefik.netsoc.tcd.ie](https://traefik.netsoc.tcd.ie).
 
 Note that [kubelan](https://github.com/devplayer0/kubelan) is implemented as a sidecar for routing requests to
-webspaces. See the [lxd8s](../../apps/lxd8s/) deployment for more details.
+webspaces. See the [webspaces](../../apps/webspaces/) deployment for more details.
+
+## TLS
+
+### netsoc.tcd.ie
+
+A wildcard certificate is issued for `netsoc.tcd.ie` is issued by IT Services. For every namespace where this
+certificate is used, a suitable `Secret` is generated with a `Kustomize` `secretGenerator` from the original certificate
+and key (in the root `kustomization.yaml` for `infrastructure`).
+
+### netsoc.ie
+
+cert-manager `Certificate` objects are created in every namespace where a netsoc.ie certificate is required.
+cert-manager will then issue these using the `letsencrypt` `ClusterIssuer`.
 
 ## Basic authentication
 

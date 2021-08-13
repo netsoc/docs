@@ -2,7 +2,7 @@
 
 [PowerDNS](https://www.powerdns.com/auth.html) is used to provide authoritative DNS resolution for netsoc.tcd.ie and
 netsoc.ie, along with reverse DNS for `134.226.83.0/24` and our IPv6 prefix (currently unused). Maths' nameserver
-ns.maths.tcd.ie will also respond to queries for netsoc.tcd.ie, so AXFRs are allowed from all of `134.226.83.0/16`.
+ns.maths.tcd.ie will also respond to queries for netsoc.tcd.ie, so AXFRs are allowed from all of `134.226.0.0/16`.
 
 The deployment uses a PostgreSQL database for persistence and exposes
 [PowerDNS-Admin](https://github.com/ngoduykhanh/PowerDNS-Admin) at [pdns.netsoc.tcd.ie](https://pdns.netsoc.tcd.ie) for
