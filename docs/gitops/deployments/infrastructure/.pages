@@ -3,4 +3,6 @@ nav:
   - longhorn.md
   - metallb.md
   - cert-manager.md
+  - smarter-device-manager.md
+  - whoami.md
   - ...

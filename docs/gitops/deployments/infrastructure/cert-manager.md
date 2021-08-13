@@ -13,7 +13,7 @@ Two `ClusterIssuer`s are deployed along with cert-manager: one for Let's Encrypt
 which won't be considered valid but have much more lax API limits) and one for production. These both have DNS-01 and
 HTTP-01 ACME challenge solvers. DNS-01 handles any netsoc.ie certificates, since we can directly manipulate records for
 these domains via RFC2136. For any other domains (e.g. for custom webspace domains), HTTP-01 will create `Ingress`
-resources.
+resources. The ACME contact email is [acme@netsoc.tcd.ie](mailto:acme@netsoc.tcd.ie).
 
 !!! note
     Wildcard certificates can only be issued via DNS-01.
