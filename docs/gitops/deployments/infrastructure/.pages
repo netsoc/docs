@@ -4,5 +4,9 @@ nav:
   - metallb.md
   - cert-manager.md
   - smarter-device-manager.md
+  - traefik.md
   - whoami.md
+  - k8s-dash.md
+  - notifications.md
+  - mail.md
   - ...

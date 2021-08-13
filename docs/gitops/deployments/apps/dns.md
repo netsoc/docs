@@ -6,7 +6,7 @@ ns.maths.tcd.ie will also respond to queries for netsoc.tcd.ie, so AXFRs are all
 
 The deployment uses a PostgreSQL database for persistence and exposes
 [PowerDNS-Admin](https://github.com/ngoduykhanh/PowerDNS-Admin) at [pdns.netsoc.tcd.ie](https://pdns.netsoc.tcd.ie) for
-record management.
+record management. Once past basic auth, the credentials are `root:hunter22`.
 
 ## From scratch
 
