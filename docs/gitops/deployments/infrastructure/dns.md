@@ -8,6 +8,31 @@ The deployment uses a PostgreSQL database for persistence and exposes
 [PowerDNS-Admin](https://github.com/ngoduykhanh/PowerDNS-Admin) at [pdns.netsoc.tcd.ie](https://pdns.netsoc.tcd.ie) for
 record management. Once past basic auth, the credentials are `root:hunter22`.
 
+## Domains
+
+### netsoc.tcd.ie
+
+We have delegeated authority over netsoc.tcd.ie. The nameservers (according to `auth-ns*.tcd.ie`) are:
+
+- ns1.netsoc.tcd.ie
+- ns2.netsoc.tcd.ie
+- ns3.netsoc.tcd.ie
+- ns.maths.tcd.ie
+
+As ns1.netsoc.tcd.ie points to 134.226.83.27, this is the primary `LoadBalancer` IP that is used for PowerDNS. As
+ns2.netsoc.tcd.ie points to 134.226.83.42, `shoe` will DNAT external DNS traffic to 134.226.83.27. ns3.netsoc.tcd.ie
+does not currently resolve. Maths' nameserver will perform AXFR requests to keep its copy of netsoc.tcd.ie up to date.
+
+For what are assumed to be legacy reasons, both IPv4 and IPv6 reverse DNS zones have different name-based NS records.
+Refer to the notes on A records for these in PowerDNS-Admin for more details.
+
+### netsoc.ie
+
+This domain is registered with [HostingIreland](https://www.hostingireland.ie/) (credentials in password manager). Due
+to a strange issue with .ie domains, where it appears that a .ie cannot be a nameserver for another .ie domain (e.g. for
+netsoc.ie to use {ns1,ns2}.netsoc.tcd.ie for its nameservers), dev has set up temporary records that point to the real
+Netsoc nameservers and used those instead. HEAnet should be able to resolve this (in theory).
+
 ## From scratch
 
 ### PowerDNS-Admin
