@@ -7,14 +7,21 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - .:/docs
+
       - ../cli/docs:/docs/docs/cli:ro
+
       - ../webspaced/docs:/docs/docs/webspaced:ro
+
       - ../shh/docs:/docs/docs/shh:ro
+
       - ../infrastructure/docs:/docs/docs/infrastructure
       # Hack so symlinks resolve correctly
       - ../infrastructure/boot:/docs/docs/boot:ro
+
       - ../gitops/docs:/docs/docs/gitops:ro
       # Another symlink hack
       - ../gitops/infrastructure/kube-system:/docs/docs/infrastructure/kube-system:ro
+
+      - ../iam/docs:/docs/docs/iam:ro
     ports:
       - 8000:8000
