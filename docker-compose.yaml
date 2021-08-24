@@ -24,6 +24,8 @@ services:
 
       - ../iam/docs:/docs/docs/iam:ro
 
+      - ../accounts/docs:/docs/docs/accounts:ro
+
       - ../website-ng/docs:/docs/docs/website:ro
     ports:
       - 8000:8000

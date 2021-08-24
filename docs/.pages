@@ -6,5 +6,6 @@ nav:
   - infrastructure
   - gitops
   - IAM: iam
+  - accounts
   - website
   - docs
