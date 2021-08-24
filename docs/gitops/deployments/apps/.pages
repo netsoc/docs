@@ -1,5 +1,7 @@
 nav:
   - website.md
+  - docs.md
   - iamd.md
+  - accounts.md
   - matrix.md
   - ...
