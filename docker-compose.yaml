@@ -23,5 +23,7 @@ services:
       - ../gitops/infrastructure/kube-system:/docs/docs/infrastructure/kube-system:ro
 
       - ../iam/docs:/docs/docs/iam:ro
+
+      - ../website-ng/docs:/docs/docs/website:ro
     ports:
       - 8000:8000
