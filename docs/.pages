@@ -5,7 +5,7 @@ nav:
   - webspaced
   - infrastructure
   - gitops
-  - IAM: iam
+  - iam
   - accounts
   - website
   - docs
