@@ -3,5 +3,7 @@ nav:
   - docs.md
   - iamd.md
   - accounts.md
+  - shhd.md
+  - dex.md
   - matrix.md
   - ...
