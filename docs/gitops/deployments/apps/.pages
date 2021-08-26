@@ -5,5 +5,7 @@ nav:
   - accounts.md
   - shhd.md
   - dex.md
+  - vaultwarden.md
+  - zammad.md
   - matrix.md
   - ...
