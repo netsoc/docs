@@ -7,5 +7,6 @@ nav:
   - dex.md
   - vaultwarden.md
   - zammad.md
+  - gitea.md
   - matrix.md
   - ...
