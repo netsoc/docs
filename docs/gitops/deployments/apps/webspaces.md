@@ -25,6 +25,10 @@ and the environment variables for the Traefik sidecar.**
 
 ## lxd8s
 
+To attach to an lxd8s node's console, run `kubectl -n webspaces attach -ti lxd8s-<replica>`, where `replica` is a
+`StatefulSet` replica index. This should bring you to a Linux TTY login (you might need to hit return to see it). Type
+`root` to log in; there should be no password.
+
 ### Resource allocation
 
 Since each of the nodes in our Kubernetes cluster have different resource allocations, percentage-based sizing is used
