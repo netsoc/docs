@@ -23,6 +23,8 @@ While not technically a GitHub Action (it runs independently as a GitHub App),
 to update dependencies. It has been configured for the GitOps repo primarily to update `HelmRelease`s. The configuration
 is a at `.github/renovate.json5`.
 
+To view logs of Renovate runs, visit [the dashboard](https://app.renovatebot.com/dashboard).
+
 ### Setup
 
 1. Install the [Renovate GitHub app](https://github.com/apps/renovate)
