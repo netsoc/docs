@@ -9,4 +9,5 @@ nav:
   - zammad.md
   - gitea.md
   - matrix.md
+  - webspaces.md
   - ...
